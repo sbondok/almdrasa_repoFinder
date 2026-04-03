@@ -1,0 +1,16 @@
+{
+  "name": "repofinder",
+  "version": "1.0.0",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}
