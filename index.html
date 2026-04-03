@@ -1,56 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RepoFinder</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main class="app-container">
-        <section class="search-section">
-            <div class="search-wrapper">
-                <div class="app-logo">Repo Finder</div>
-                <div class="search-content">
-                <div class="header-image">
-                    <img src="./bond_AI.png" alt="Bond AI Logo" class="bond-logo">
+      <section class="search-section">
+        <div class="search-wrapper">
+          <div class="app-logo">Repo Finder</div>
+          <div class="search-content">
+            <div class="header-image">
+              <img src="./bond_AI.png" alt="Bond AI Logo" class="bond-logo" />
+            </div>
+
+            <form id="search-form" class="search-form">
+              <fieldset class="radio-group">
+                <legend class="sr-only">Search strategy</legend>
+                <div class="radio-option">
+                  <input
+                    type="radio"
+                    id="search-user"
+                    name="search-type"
+                    value="user"
+                    checked
+                  />
+                  <label for="search-user">Username</label>
                 </div>
-                
-                <form id="search-form" class="search-form">
-                    <fieldset class="radio-group">
-                        <legend class="sr-only">Search strategy</legend>
-                        <div class="radio-option">
-                            <input type="radio" id="search-user" name="search-type" value="user" checked>
-                            <label for="search-user">Username</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="search-org" name="search-type" value="org">
-                            <label for="search-org">Organization</label>
-                        </div>
-                    </fieldset>
+                <div class="radio-option">
+                  <input
+                    type="radio"
+                    id="search-org"
+                    name="search-type"
+                    value="org"
+                  />
+                  <label for="search-org">Organization</label>
+                </div>
+              </fieldset>
 
-                    <div class="input-group">
-                        <label for="search-input" class="sr-only">Enter Username or Organization</label>
-                        <input type="text" id="search-input" placeholder="Enter username or organization..." required autofocus>
-                        <button type="submit" class="search-button">Search</button>
-                    </div>
-                </form>
-                <p class="credits-text">
-                    Repo finder is one of <a href="https://www.linkedin.com/in/sbondok/" target="_blank" rel="noopener noreferrer">sbondok</a>'s projects with <a href="https://almdrasa.com/" target="_blank" rel="noopener noreferrer">Almdrasa</a> frontend deploma
-                </p>
-            </div>
-            </div>
-        </section>
+              <div class="input-group">
+                <label for="search-input" class="sr-only"
+                  >Enter Username or Organization</label
+                >
+                <input
+                  type="text"
+                  id="search-input"
+                  placeholder="Enter username or organization..."
+                  required
+                  autofocus
+                />
+                <button type="submit" class="search-button">Search</button>
+              </div>
+            </form>
+            <div
+              id="form-error"
+              class="hidden error-message"
+              style="margin-top: 10px"
+            ></div>
+            <p class="credits-text">
+              Repo finder is one of
+              <a
+                href="https://www.linkedin.com/in/sbondok/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >sbondok</a
+              >'s projects with
+              <a
+                href="https://almdrasa.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Almdrasa</a
+              >
+              frontend deploma
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <section id="results-section" class="results-section" aria-live="polite">
-            <div id="loading" class="hidden">Loading repositories...</div>
-            <div id="error" class="hidden error-message"></div>
-            <ul id="repo-list" class="repo-list">
-                <!-- Repositories will be injected here via JS -->
-            </ul>
-        </section>
+      <section id="results-section" class="results-section" aria-live="polite">
+        <div id="loading" class="hidden">Loading repositories...</div>
+        <div id="error" class="hidden error-message"></div>
+        <ul id="repo-list" class="repo-list">
+          <!-- Repositories will be injected here via JS -->
+        </ul>
+      </section>
     </main>
 
     <script type="module" src="./js/main.js"></script>
-</body>
+  </body>
 </html>
